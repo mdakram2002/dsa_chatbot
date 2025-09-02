@@ -1,19 +1,19 @@
 # 🤖 DSA Chatbot
 
-A conversational **DSA (Data Structures & Algorithms) Chatbot** built with **React (frontend)** and **Node.js + Express (backend)**.  
+A conversational **DSA (Data Structures & Algorithms) Chatbot** built with **React (frontend)** and **Node.js + Express (backend)**.
 It allows users to chat with an AI assistant, save chat history, and get structured, formatted answers (with syntax highlighting for code).
 
 ---
 
-## 🚀 Features
+## Features
 
-- 📝 **Chat with AI** – Ask DSA-related questions and get instant answers.
-- 💾 **Persistent chat history** – Chats are saved in `localStorage` and can be reloaded later.
-- 📑 **Sidebar with multiple chats** – Start new chats and switch between them.
-- 🎨 **Beautiful UI** – Styled with **TailwindCSS** and designed to look like ChatGPT.
-- 🧩 **Code highlighting** – Supports code snippets using `react-syntax-highlighter`.
-- 🖊 **Markdown support** – Renders lists, tables, code blocks, and formatted text.
-- 🔄 **Express + Gemini API** – Backend integrates with Google Gemini API for responses.
+- **Chat with AI** – Ask DSA-related questions and get instant answers.
+- **Persistent chat history** – Chats are saved in `localStorage` and can be reloaded later.
+- **Sidebar with multiple chats** – Start new chats and switch between them.
+- **Beautiful UI** – Styled with **TailwindCSS** and designed to look like ChatGPT.
+- **Code highlighting** – Supports code snippets using `react-syntax-highlighter`.
+- **Markdown support** – Renders lists, tables, code blocks, and formatted text.
+- **Express + Gemini API** – Backend integrates with Google Gemini API for responses.
 
 ---
 
@@ -32,44 +32,45 @@ It allows users to chat with an AI assistant, save chat history, and get structu
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
-dsa_chatbot/
-│
-├── client/ # React frontend
-│ ├── src/
-│ │ ├── components/ # Reusable components
-│ │ │ ├── Sidebar.jsx
-│ │ │ ├── InputBox.jsx
-│ │ │ └── MessageBubble.jsx
-│ │ ├── pages/
-│ │ │ └── ChatWindow.jsx
-│ │ ├── services/
-│ │ │ └── api.jsx # Handles API requests
-│ │ └── index.js
-│ └── package.json
-│
-├── server/ # Node backend
-│ ├── index.js # Express server
-│ ├── services/
-│ │ └── api.js # Gemini API integration
-│ └── package.json
-│
-├── .env # API keys & environment vars
-└── README.md # Documentation
+- -dsa_chatbot/
+- │
+- ├── client/ # React frontend
+- │ ├── src/
+-   │ ├──/assets
+- │ │ ├── components/ # Reusable components
+- │ │ │ ├── Sidebar.jsx
+- │ │ │ ├── InputBox.jsx
+- │ │ │ └── MessageBubble.jsx
+- │ │ ├── pages/
+- │ │ │ └── ChatWindow.jsx
+- │ │ ├── services/
+- │ │ │ └── api.jsx # Handles API requests
+- │ │ └── index.js
+- │ └── package.json
+- │
+- ├── server/ # Node backend
+- │ ├── index.js # Express server
+- │ ├── services/
+- │ │ └── api.js # Gemini API integration
+- │ └── package.json
+- │
+- ├── .env # API keys & environment vars
+- └── README.md # Documentation
 
 
-## 🎨 Screenshots
+## Screenshots
 
-### 💬 Chat UI  
+### Chat UI
 Like ChatGPT with code highlighting and markdown support.
 
-![Chat Screenshot](./assets/chat_ui.png)
+![Chat Screenshot](./src/assets/chat_ui.png)
 
-### 📑 Sidebar  
+### Sidebar
 Start and switch between chats easily.
 
-![Sidebar Screenshot](./assets/sidebar.png)
+![Sidebar Screenshot](./src/assets/sidebar.png)
 
 
 ---
