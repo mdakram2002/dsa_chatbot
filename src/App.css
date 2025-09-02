@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.markdown {
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #eaeaea;
+}
+
+/* Headings spacing */
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+/* Paragraph spacing */
+.markdown p {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+/* List spacing */
+.markdown ul {
+  padding-left: 1.5rem;
+  margin-top: 2px;
+  /* margin-bottom: 5px; */
+}
+
+.markdown li {
+  margin-bottom: 4px;
+}
+
+/* Code inline */
+.markdown code {
+  background: #1e1e1e;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+/* Code blocks */
+.markdown pre {
+  background: #1e1e1e;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
