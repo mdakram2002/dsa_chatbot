@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^6.6.4",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "lucide-react": "^0.553.0",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
     "react": "^19.1.1",
