@@ -4,7 +4,7 @@ const corsOptions = {
   origin: function (origin, callback) {
     const allowedOrigins = [
       "http://localhost:3000",
-      "https://dsa-chatbot-ashy.vercel.app",
+      "https://dsa-chatbot-six.vercel.app",
       process.env.CLIENT_URL
     ].filter(Boolean);
 
