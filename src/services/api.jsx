@@ -1,23 +1,34 @@
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
-export async function sendMessageToServer(input) {
-  try {
-    const res = await fetch("http://localhost:5000/chat", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        messages: [
-          { role: "user", text: input }
-        ]
-      }),
-    });
-    // console.log("API URL:", process.env.REACT_APP_BASE_URL);
-
-    const data = await res.json();
-    return data.reply || "No response from server.";
-  } catch (err) {
-    console.error(err);
-    return "Error connecting to server.";
+const handleResponse = async (response) => {
+  if (!response.ok) {
+    const error = await response.text();
+    throw new Error(error || `HTTP error! status: ${response.status}`);
   }
-}
+  return response.json();
+};
+
+const apiRequest = async (endpoint, options = {}) => {
+  const url = `${API_BASE_URL}${endpoint}`;
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+    ...options,
+  };
+
+  if (config.body && typeof config.body === 'object') {
+    config.body = JSON.stringify(config.body);
+  }
+
+  try {
+    const response = await fetch(url, config);
+    return await handleResponse(response);
+  } catch (error) {
+    console.error('API request failed:', error);
+    throw error;
+  }
+};
+
+export default apiRequest;
