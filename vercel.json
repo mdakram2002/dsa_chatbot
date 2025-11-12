@@ -19,8 +19,5 @@
       "src": "/(.*)",
       "dest": "build/index.html"
     }
-  ],
-  "env": {
-    "MONGODB_URL": "@mongodb_url"
-  }
+  ]
 }
