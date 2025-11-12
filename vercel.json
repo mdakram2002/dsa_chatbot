@@ -21,6 +21,6 @@
     }
   ],
   "env": {
-    "MONGODB_URL": "mongodb+srv://mdakram12022002:3FmhayLVOpycgYIn@cluster0.3v5dt.mongodb.net/dsa_chatbot"
+    "MONGODB_URL": "@mongodb_url"
   }
 }
