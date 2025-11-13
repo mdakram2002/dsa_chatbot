@@ -7,21 +7,22 @@ import AppRouter from './components/layout/AppRouter';
 import ResponsiveLayout from './components/layout/ResponsiveLayout';
 
 function App() {
-  // Get client ID from environment variables
+  // Force production detection
+  const isProduction = window.location.hostname !== 'localhost';
+  const apiUrl = isProduction ? '/api' : 'http://localhost:5000/api';
   const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
-  console.log('Environment:', process.env.NODE_ENV);
-  console.log('API URL:', process.env.REACT_APP_API_URL);
+  console.log('=== PRODUCTION DEBUG ===');
+  console.log('Hostname:', window.location.hostname);
+  console.log('Is Production:', isProduction);
+  console.log('API URL:', apiUrl);
   console.log('Google Client ID exists:', !!googleClientId);
 
-  // Check if we have the required Google Client ID
   if (!googleClientId) {
     return (
       <div style={{ padding: '20px', textAlign: 'center', color: 'red' }}>
-        <h1>🚨 Configuration Error</h1>
-        <p>Google Client ID is missing!</p>
-        <p>Please check your environment variables in Vercel.</p>
-        <p>Current Environment: {process.env.NODE_ENV}</p>
+        <h1>Missing Google Client ID</h1>
+        <p>Please check your Vercel environment variables</p>
       </div>
     );
   }
