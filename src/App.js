@@ -8,27 +8,20 @@ import ResponsiveLayout from './components/layout/ResponsiveLayout';
 
 function App() {
   // Get client ID from environment variables
-  const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID 
-  console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID)
+  const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
-  // Check if client ID is configured
+  console.log('Environment:', process.env.NODE_ENV);
+  console.log('API URL:', process.env.REACT_APP_API_URL);
+  console.log('Google Client ID exists:', !!googleClientId);
+
+  // Check if we have the required Google Client ID
   if (!googleClientId) {
     return (
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center p-4">
-        <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg text-center max-w-md">
-          <div className="text-red-500 text-6xl mb-4">⚠️</div>
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Configuration Required
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
-            Google OAuth Client ID is missing. Please check your environment variables.
-          </p>
-          <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg text-left">
-            <code className="text-sm text-gray-800 dark:text-gray-200">
-              REACT_APP_GOOGLE_CLIENT_ID=your_client_id_here
-            </code>
-          </div>
-        </div>
+      <div style={{ padding: '20px', textAlign: 'center', color: 'red' }}>
+        <h1>🚨 Configuration Error</h1>
+        <p>Google Client ID is missing!</p>
+        <p>Please check your environment variables in Vercel.</p>
+        <p>Current Environment: {process.env.NODE_ENV}</p>
       </div>
     );
   }
