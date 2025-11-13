@@ -168,7 +168,20 @@ Be the ULTIMATE DSA tutor that students wish they had! Make complex concepts fee
       },
     });
 
-    return response.text();
+    // console.log('Response type:', typeof response);
+    // console.log('Response keys:', Object.keys(response));
+    // console.log('Full response:', response);
+
+    // FIX: The response is already parsed, so extract the text properly
+    if (response.candidates && response.candidates[0] && response.candidates[0].content) {
+      return response.candidates[0].content.parts[0].text;
+    } else if (response.text) {
+      return response.text;
+    } else {
+      console.error('Unexpected response format:', response);
+      throw new Error('Unexpected response format from Gemini API');
+    }
+
   } catch (error) {
     console.error("Gemini API Error:", error);
 

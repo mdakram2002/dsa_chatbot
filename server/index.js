@@ -9,15 +9,28 @@ import errorHandler from "./middleware/errorHandler.js";
 
 dotenv.config();
 const app = express();
-connectDB();
 
 // Middleware
 app.use(cors({
   origin: process.env.CLIENT_URL || "http://localhost:3000",
   credentials: true
 }));
+connectDB();
+
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
+
+// Debug all incoming requests
+// app.use((req, res, next) => {
+//   console.log('=== INCOMING REQUEST ===');
+//   console.log('Method:', req.method);
+//   console.log('URL:', req.url);
+//   console.log('Path:', req.path);
+//   console.log('Original URL:', req.originalUrl);
+//   console.log('Timestamp:', new Date().toISOString());
+//   console.log('========================');
+//   next();
+// });
 
 // Routes
 app.use("/api/auth", authRoutes);

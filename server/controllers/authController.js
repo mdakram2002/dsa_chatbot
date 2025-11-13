@@ -3,6 +3,8 @@ import { v4 as uuidv4 } from "uuid";
 
 export const googleAuth = async (req, res) => {
   try {
+    // console.log('Google auth endpoint hit!');
+    // console.log('Request body:', req.body);
     const { access_token, userInfo } = req.body;
 
     if (!userInfo || !userInfo.sub) {
@@ -31,7 +33,7 @@ export const googleAuth = async (req, res) => {
       user.name = userInfo.name || user.name;
       await user.save();
     }
-
+    // console.log('Google auth successful for:', userInfo.email);
     res.json({
       success: true,
       user: {

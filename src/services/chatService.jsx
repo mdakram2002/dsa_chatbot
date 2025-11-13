@@ -1,4 +1,6 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = process.env.NODE_ENV === 'production'
+  ? '/api'
+  : 'http://localhost:5000/api';
 
 export const getUserChats = async (userId) => {
   const response = await fetch(`${API_BASE_URL}/chat/user/${userId}`);
