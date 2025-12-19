@@ -3,13 +3,13 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
   googleId: {
     type: String,
-    unique: true,
+    // unique: true,
     sparse: true
   },
   email: {
     type: String,
     required: true,
-    unique: true,
+    // unique: true,
     trim: true,
     lowercase: true,
     validate: {
@@ -38,7 +38,7 @@ const userSchema = new mongoose.Schema({
   },
   accessToken: {
     type: String,
-    select: false 
+    select: false
   },
   isGuest: {
     type: Boolean,
