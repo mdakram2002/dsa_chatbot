@@ -168,10 +168,6 @@ Be the ULTIMATE DSA tutor that students wish they had! Make complex concepts fee
       },
     });
 
-    // console.log('Response type:', typeof response);
-    // console.log('Response keys:', Object.keys(response));
-    // console.log('Full response:', response);
-
     // FIX: The response is already parsed, so extract the text properly
     if (response.candidates && response.candidates[0] && response.candidates[0].content) {
       return response.candidates[0].content.parts[0].text;

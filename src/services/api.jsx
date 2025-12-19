@@ -3,13 +3,6 @@ const API_BASE_URL = process.env.NODE_ENV === 'production'
   : 'http://localhost:5000/api';
 
 const handleResponse = async (response) => {
-  // console.log('Response Details:', {
-  //   status: response.status,
-  //   statusText: response.statusText,
-  //   url: response.url,
-  //   ok: response.ok
-  // });
-
   if (!response.ok) {
     const errorText = await response.text();
     console.error('Full error response:', errorText);
@@ -21,11 +14,11 @@ const handleResponse = async (response) => {
 const apiRequest = async (endpoint, options = {}) => {
   const url = `${API_BASE_URL}${endpoint}`;
 
-  console.log('Making API request:', {
-    url: url,
-    method: options.method || 'GET',
-    endpoint: endpoint
-  });
+  // console.log('Making API request:', {
+  //   url: url,
+  //   method: options.method || 'GET',
+  //   endpoint: endpoint
+  // });
 
   const config = {
     headers: {

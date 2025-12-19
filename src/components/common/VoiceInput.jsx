@@ -26,7 +26,7 @@ export default function VoiceInput({ onTextConverted, disabled }) {
       // Auto-stop after 3 seconds of no new speech
       const silenceTimer = setTimeout(() => {
         if (listening) {
-          console.log('⏱️ Auto-stopping due to silence');
+          console.log('⏱Auto-stopping due to silence');
           handleStopListening();
         }
       }, 3000);
